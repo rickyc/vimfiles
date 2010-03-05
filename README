@@ -1,0 +1,26 @@
+PLUGINS
+CSApprox				http://www.vim.org/scripts/script.php?script_id=2390
+ColorSchemeMenuMaker	http://www.vim.org/scripts/script.php?script_id=2004
+ColorSchemes
+NERD_commenter			http://github.com/scrooloose/nerdcommenter
+NERD_tree				http://github.com/scrooloose/nerdtree
+SearchComplete			http://www.vim.org/scripts/script.php?script_id=474
+a						http://www.vim.org/scripts/script.php?script_id=31
+acp						http://www.vim.org/scripts/script.php?script_id=1879
+color_sample_pack		http://www.vim.org/scripts/script.php?script_id=625
+fuf (FuzzyFinder)		http://www.vim.org/scripts/script.php?script_id=1984
+fugitive				http://github.com/tpope/vim-fugitive
+fuzzyfinder_textmate	http://github.com/paydro/fuzzyfinder_textmate
+git						http://github.com/motemen/git-vim/
+grep.vim				http://www.vim.org/scripts/script.php?script_id=311
+matchit					http://www.vim.org/scripts/script.php?script_id=39
+minibufexpl				http://www.vim.org/scripts/script.php?script_id=159
+ragtag					http://github.com/tpope/vim-ragtag
+rails					http://github.com/tpope/vim-rails
+surround				http://github.com/tpope/vim-surround
+syntastic				http://www.vim.org/scripts/script.php?script_id=2736
+taglist					http://vim-taglist.sourceforge.net/
+themes.vim 	
+
+NOTES
+taglist requires exuberant ctags utility <http://ctags.sourceforge.net>
