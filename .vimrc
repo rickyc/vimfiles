@@ -5,11 +5,6 @@ runtime! debian.vim
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>v :e $MYVIMRC
 
-" Uncomment the next line to make Vim more Vi-compatible
-" NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
-" options, so any other options should be set AFTER setting 'compatible'.
-"set compatible
-
 "let g:alternateExtensions_foo = "bar,baz"
 
 syntax on
