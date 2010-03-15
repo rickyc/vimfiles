@@ -2,6 +2,7 @@ PLUGINS
 CSApprox				http://www.vim.org/scripts/script.php?script_id=2390
 ColorSchemeMenuMaker	http://www.vim.org/scripts/script.php?script_id=2004
 ColorSchemes
+Cocoa					http://github.com/msanders/cocoa.vim
 NERD_commenter			http://github.com/scrooloose/nerdcommenter
 NERD_tree				http://github.com/scrooloose/nerdtree
 SearchComplete			http://www.vim.org/scripts/script.php?script_id=474
