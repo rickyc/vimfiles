@@ -4,8 +4,10 @@ runtime! debian.vim
 
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>v :e $MYVIMRC
+:nmap <c-a> :A<CR>
 
-"let g:alternateExtensions_foo = "bar,baz"
+let g:alternateExtensions_h = "m,c"
+let g:alternateExtensions_m = "h"
 
 syntax on
 
