@@ -36,10 +36,10 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-" Automatically highlights lines past 74 characters
+" Automatically highlights lines past 80 characters
 augroup vimrc_autocmds
-	autocmd BufRead * highlight OverLength ctermbg=darkgrey guibg=#592929
-	autocmd BufRead * match OverLength /\%74v.*/
+	"autocmd BufRead * highlight OverLength ctermbg=darkgrey guibg=#592929
+	"autocmd BufRead * match OverLength /\%80v.*/
 augroup END
 
 let g:ragtag_global_maps = 1
