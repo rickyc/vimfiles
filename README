@@ -1,27 +1,27 @@
 PLUGINS
-CSApprox				http://www.vim.org/scripts/script.php?script_id=2390
-ColorSchemeMenuMaker	http://www.vim.org/scripts/script.php?script_id=2004
-ColorSchemes
-Cocoa					http://github.com/msanders/cocoa.vim
-NERD_commenter			http://github.com/scrooloose/nerdcommenter
-NERD_tree				http://github.com/scrooloose/nerdtree
-SearchComplete			http://www.vim.org/scripts/script.php?script_id=474
-a						http://www.vim.org/scripts/script.php?script_id=31
-acp						http://www.vim.org/scripts/script.php?script_id=1879
-color_sample_pack		http://www.vim.org/scripts/script.php?script_id=625
-fuf (FuzzyFinder)		http://www.vim.org/scripts/script.php?script_id=1984
-fugitive				http://github.com/tpope/vim-fugitive
-fuzzyfinder_textmate	http://github.com/paydro/fuzzyfinder_textmate
-git						http://github.com/motemen/git-vim/
-grep.vim				http://www.vim.org/scripts/script.php?script_id=311
-matchit					http://www.vim.org/scripts/script.php?script_id=39
-minibufexpl				http://www.vim.org/scripts/script.php?script_id=159
-ragtag					http://github.com/tpope/vim-ragtag
-rails					http://github.com/tpope/vim-rails
-surround				http://github.com/tpope/vim-surround
-syntastic				http://www.vim.org/scripts/script.php?script_id=2736
-taglist					http://vim-taglist.sourceforge.net/
-themes.vim 	
+a									http://www.vim.org/scripts/script.php?script_id=31
+arduino								http://www.vim.org/scripts/script.php?script_id=2654
+cocoa.vim							http://github.com/msanders/cocoa.vim
+color-scheme-menu-maker				http://www.vim.org/scripts/script.php?script_id=2004
+color_sample_pack					http://www.vim.org/scripts/script.php?script_id=625
+grep								http://www.vim.org/scripts/script.php?script_id=311
+matchit								http://www.vim.org/scripts/script.php?script_id=39
+minibufexpl							http://www.vim.org/scripts/script.php?script_id=159
+nerdcommenter 						http://github.com/scrooloose/nerdcommenter
+nerdtree							http://github.com/scrooloose/nerdtree
+search-complete						http://www.vim.org/scripts/script.php?script_id=474
+surround							http://github.com/tpope/vim-surround
+syntastic							http://www.vim.org/scripts/script.php?script_id=2736
+taglist.vim							http://vim-taglist.sourceforge.net/
+vim-autocomplpop					http://www.vim.org/scripts/script.php?script_id=1879
+vim-cucumber						http://github.com/tpope/vim-cucumber
+vim-fugitive						http://github.com/tpope/vim-fugitive
+vim-fuzzy-finder-textmate-bundle	http://github.com/nate/vim-fuzzy-finder-textmate-bundle
+vim-haml							http://github.com/tpope/vim-haml
+vim-ragtag							http://github.com/tpope/vim-ragtag
+vim-rails							http://github.com/tpope/vim-rails
+vim-repeat							http://github.com/tpope/vim-repeat
+vim-surround						http://github.com/tpope/vim-surround
 
 NOTES
 taglist requires exuberant ctags utility <http://ctags.sourceforge.net>
