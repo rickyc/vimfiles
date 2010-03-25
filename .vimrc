@@ -10,8 +10,11 @@ let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
 
 syntax on
+
 " setting lush syntax to default to lisp
 au BufRead,BufNewFile *.lsh setfiletype lisp
+
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Pathogen >> http://github.com/tpope/vim-pathogen
 call pathogen#runtime_append_all_bundles() 
