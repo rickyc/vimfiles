@@ -10,6 +10,14 @@ let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
 
 syntax on
+" setting lush syntax to default to lisp
+au BufRead,BufNewFile *.lsh setfiletype lisp
+
+" Pathogen >> http://github.com/tpope/vim-pathogen
+call pathogen#runtime_append_all_bundles() 
+
+" Vim-rails mvim init menu by default
+let g:rails_menu=1
 
 " Execute open rspec buffer
 " Thanks to Ian Smith-Heisters
@@ -35,9 +43,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
-
-" setting lush syntax to default to lisp
-au BufRead,BufNewFile *.lsh setfiletype lisp
 
 " Automatically highlights lines past 80 characters
 augroup vimrc_autocmds
@@ -112,5 +117,5 @@ endif
 
 if !has("gui_running")
 	"set t_Co=256
-	let g:CSApprox_loaded = 1
+	"let g:CSApprox_loaded = 1
 endif
