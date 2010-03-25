@@ -36,6 +36,9 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
+" setting lush syntax to default to lisp
+au BufRead,BufNewFile *.lsh setfiletype lisp
+
 " Automatically highlights lines past 80 characters
 augroup vimrc_autocmds
 	autocmd BufRead * highlight OverLength ctermbg=darkgrey guibg=#592929
