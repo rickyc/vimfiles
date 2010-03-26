@@ -88,7 +88,7 @@ set mouse=a		" Enable mouse usage (all modes) in terminals
 set hlsearch
 
 "TagList Plugin
-let Tlist_Use_Right_Window = 1
+let Tlist_Use_Right_Window = 0
 
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
