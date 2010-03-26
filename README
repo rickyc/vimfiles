@@ -11,6 +11,7 @@ minibufexpl				http://www.vim.org/scripts/script.php?script_id=159
 nerdcommenter 				http://github.com/scrooloose/nerdcommenter
 nerdtree				http://github.com/scrooloose/nerdtree
 search-complete				http://www.vim.org/scripts/script.php?script_id=474
+snipmate.vim			http://github.com/msanders/snipmate.vim
 surround				http://github.com/tpope/vim-surround
 syntastic				http://www.vim.org/scripts/script.php?script_id=2736
 taglist.vim				http://vim-taglist.sourceforge.net/

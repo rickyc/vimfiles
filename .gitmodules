@@ -34,3 +34,6 @@
 [submodule "bundle/vim-fuzzy-finder-textmate-bundle"]
 	path = bundle/vim-fuzzy-finder-textmate-bundle
 	url = git://github.com/nate/vim-fuzzy-finder-textmate-bundle.git
+[submodule "bundle/snipmate.vim"]
+	path = bundle/snipmate.vim
+	url = git://github.com/msanders/snipmate.vim.git
