@@ -33,6 +33,7 @@ alias gst="git status"
 alias ga="git add"
 alias gr="git rm"
 alias gu="git pull --rebase && git push origin HEAD"
+alias gco="git checkout"
 
 # extra stuff =]
 alias admin="git pull origin admin"
