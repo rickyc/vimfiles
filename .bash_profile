@@ -43,6 +43,9 @@ alias master="git pull origin master"
 alias ss="script/server"
 alias metrics="time rake metrics:all"
 
+alias jc='javac Main.java'
+alias jr='time java Main < input.txt'
+
 # aliases
 alias l='ls -oh'
 alias la='ls -a'
