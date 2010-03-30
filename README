@@ -1,8 +1,47 @@
 PLUGINS
+<<<<<<< HEAD
 a					                http://www.vim.org/scripts/script.php?script_id=31
 arduino					            http://www.vim.org/scripts/script.php?script_id=2654
 cocoa.vim				            http://github.com/msanders/cocoa.vim
 color-scheme-menu-maker	            http://www.vim.org/scripts/script.php?script_id=2004
+<<<<<<< HEAD
+color_sample_pack                   http://www.vim.org/scripts/script.php?script_id=625
+grep				            	http://www.vim.org/scripts/script.php?script_id=311
+jquery				            	http://www.vim.org/scripts/script.php?script_id=2416
+matchit				            	http://www.vim.org/scripts/script.php?script_id=39
+minibufexpl			            	http://www.vim.org/scripts/script.php?script_id=159
+nerdcommenter 		            	http://github.com/scrooloose/nerdcommenter
+nerdtree			            	http://github.com/scrooloose/nerdtree
+search-complete		            	http://www.vim.org/scripts/script.php?script_id=474
+supertab			            	http://www.vim.org/scripts/script.php?script_id=1643
+surround			            	http://github.com/tpope/vim-surround
+syntastic			            	http://www.vim.org/scripts/script.php?script_id=2736
+taglist.vim			            	http://vim-taglist.sourceforge.net/
+vim-autocomplpop	            	http://www.vim.org/scripts/script.php?script_id=1879
+vim-cucumber		                http://github.com/tpope/vim-cucumber
+vim-fugitive		            	http://github.com/tpope/vim-fugitive
+=======
+a					http://www.vim.org/scripts/script.php?script_id=31
+arduino					http://www.vim.org/scripts/script.php?script_id=2654
+cocoa.vim				http://github.com/msanders/cocoa.vim
+color-scheme-menu-maker			http://www.vim.org/scripts/script.php?script_id=2004
+color_sample_pack			http://www.vim.org/scripts/script.php?script_id=625
+grep					http://www.vim.org/scripts/script.php?script_id=311
+jquery					http://www.vim.org/scripts/script.php?script_id=2416
+matchit					http://www.vim.org/scripts/script.php?script_id=39
+minibufexpl				http://www.vim.org/scripts/script.php?script_id=159
+nerdcommenter 				http://github.com/scrooloose/nerdcommenter
+nerdtree				http://github.com/scrooloose/nerdtree
+search-complete				http://www.vim.org/scripts/script.php?script_id=474
+snipmate.vim			http://github.com/msanders/snipmate.vim
+surround				http://github.com/tpope/vim-surround
+syntastic				http://www.vim.org/scripts/script.php?script_id=2736
+taglist.vim				http://vim-taglist.sourceforge.net/
+vim-autocomplpop			http://www.vim.org/scripts/script.php?script_id=1879
+vim-cucumber				http://github.com/tpope/vim-cucumber
+vim-fugitive				http://github.com/tpope/vim-fugitive
+>>>>>>> 7b770b3... added snipmate plugin
+=======
 color_sample_pack		            http://www.vim.org/scripts/script.php?script_id=625
 grep					            http://www.vim.org/scripts/script.php?script_id=311
 jquery					            http://www.vim.org/scripts/script.php?script_id=2416
@@ -19,6 +58,7 @@ taglist.vim				            http://vim-taglist.sourceforge.net/
 vim-autocomplpop		            http://www.vim.org/scripts/script.php?script_id=1879
 vim-cucumber			            http://github.com/tpope/vim-cucumber
 vim-fugitive			            http://github.com/tpope/vim-fugitive
+>>>>>>> d5403cb1edbc65395d1a1d865e5491a68265dc09
 vim-fuzzy-finder-textmate-bundle	http://github.com/nate/vim-fuzzy-finder-textmate-bundle
 vim-haml				            http://github.com/tpope/vim-haml
 vim-ragtag				            http://github.com/tpope/vim-ragtag
