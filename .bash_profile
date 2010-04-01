@@ -205,7 +205,7 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-export EDITOR="vim";
+#export EDITOR="vim";
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@localhost - ${PWD}\007" '
 my_prompt
 
