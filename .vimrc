@@ -9,15 +9,18 @@ runtime! debian.vim
 let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
 
-syntax on
-
-" setting lush syntax to default to lisp
-au BufRead,BufNewFile *.lsh setfiletype lisp
-
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+filetype off
 
 " Pathogen >> http://github.com/tpope/vim-pathogen
 call pathogen#runtime_append_all_bundles() 
+"call pathogen#helptags()
+
+syntax on
+filetype plugin indent on
+
+" setting lush syntax to default to lisp
+au BufRead,BufNewFile *.lsh setfiletype lisp
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Vim-rails mvim init menu by default
 let g:rails_menu=1
