@@ -42,6 +42,7 @@ alias padmin="git push origin admin"
 alias master="git pull origin master"
 alias ss="script/server"
 alias metrics="time rake metrics:all"
+alias rm="rm -ir"
 
 alias jc='javac Main.java'
 alias jr='time java Main < input.txt'
