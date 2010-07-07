@@ -108,7 +108,7 @@ let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
 au FileType c setl shiftwidth=2 tabstop=2
 
 if has("gui_running")
-	set guifont=DejaVu_Sans_Mono:h10
+	set guifont=DejaVu_Sans_Mono:h11
 	set guioptions-=T
 	set guioptions-=R
 	set guioptions-=L
