@@ -106,6 +106,8 @@ let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
 "
 
 au FileType c setl shiftwidth=2 tabstop=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+
 
 if has("gui_running")
 	set guifont=DejaVu_Sans_Mono:h11
