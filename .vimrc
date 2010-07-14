@@ -95,6 +95,10 @@ let Tlist_Use_Right_Window = 0
 
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
+
+" JSLint Validation
+nmap <F6> :JSL<CR>
+
 "nmap <S-F7> :NERDTreeClose<CR> "shift-f7
 " Store the bookmarks file in perforce
 "let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
