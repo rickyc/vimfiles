@@ -43,6 +43,3 @@
 [submodule "bundle/vim-rack"]
 	path = bundle/vim-rack
 	url = http://github.com/dasch/vim-rack.git
-[submodule "bundle/javaScriptLint"]
-	path = bundle/javaScriptLint
-	url = http://github.com/joestelmach/javaScriptLint.vim.git
