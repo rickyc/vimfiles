@@ -6,6 +6,7 @@ color-scheme-menu-maker             http://www.vim.org/scripts/script.php?script
 color_sample_pack                   http://www.vim.org/scripts/script.php?script_id=625
 grep                                http://www.vim.org/scripts/script.php?script_id=311
 jquery                              http://www.vim.org/scripts/script.php?script_id=2416
+javaScriptLint                      http://github.com/joestelmach/javaScriptLint.vim
 matchit                             http://www.vim.org/scripts/script.php?script_id=39
 minibufexpl                         http://www.vim.org/scripts/script.php?script_id=159
 nerdcommenter                       http://github.com/scrooloose/nerdcommenter
@@ -30,4 +31,4 @@ vim-surround                        http://github.com/tpope/vim-surround
 
 NOTES
 taglist requires exuberant ctags utility <http://ctags.sourceforge.net>
-
+javascriptJSLint requires javascriptlint <http://www.javascriptlint.com/download.htm>
