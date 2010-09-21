@@ -79,7 +79,6 @@ set number
 "set backspace=start,eol
 set nowrap
 set ruler
-"set cursorcolumn
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
@@ -120,6 +119,7 @@ if has("gui_running")
 	set guioptions-=T
 	set guioptions-=R
 	set guioptions-=L
+    set cursorcolumn
 	set cursorline
 	color ir_black
 	"color molokai
