@@ -1,5 +1,6 @@
 PLUGINS
 a                                   http://www.vim.org/scripts/script.php?script_id=31
+ack                                 http://github.com/mileszs/ack.vim
 arduino                             http://www.vim.org/scripts/script.php?script_id=2654
 cocoa.vim                           http://github.com/msanders/cocoa.vim
 color-scheme-menu-maker             http://www.vim.org/scripts/script.php?script_id=2004
@@ -32,3 +33,4 @@ vim-surround                        http://github.com/tpope/vim-surround
 NOTES
 taglist requires exuberant ctags utility <http://ctags.sourceforge.net>
 javascriptJSLint requires javascriptlint <http://www.javascriptlint.com/download.htm>
+ack.vim requires ack <http://betterthangrep.com/>
