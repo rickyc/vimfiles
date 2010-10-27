@@ -116,6 +116,8 @@ autocmd Filetype .*.js setlocal ts=2 sts=2 sw=2 expandtab
 
 set grepprg=ack
 
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+
 if has("gui_running")
 	set guifont=DejaVu_Sans_Mono:h11
 	set guioptions-=T
