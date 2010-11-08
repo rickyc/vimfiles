@@ -114,7 +114,14 @@ autocmd Filetype .*.js setlocal ts=2 sts=2 sw=2 expandtab
 
 
 
-set grepprg=ack
+"set grepprg=ack
+function! Ack_Search(command)
+    cexpr system("ack " . a:command)
+endfunction
+
+command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
+map <leader>a :Ack<space>
+
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
