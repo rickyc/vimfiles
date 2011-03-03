@@ -126,6 +126,7 @@ map <leader>a :Ack<space>
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 if has("gui_running")
+	"set guifont=Menlo:h11
 	set guifont=DejaVu_Sans_Mono:h11
 	set guioptions-=T
 	set guioptions-=R

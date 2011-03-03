@@ -29,6 +29,7 @@ vim-rack                            http://github.com/dasch/vim-rack
 vim-rails                           http://github.com/tpope/vim-rails
 vim-repeat                          http://github.com/tpope/vim-repeat
 vim-surround                        http://github.com/tpope/vim-surround
+vim-yankring                        http://github.com/chrismetcalf/vim-yankring
 
 NOTES
 taglist requires exuberant ctags utility <http://ctags.sourceforge.net>
