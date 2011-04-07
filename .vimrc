@@ -1,3 +1,4 @@
+set nocompatible
 runtime! debian.vim
 "set lines=35
 "set columns=100
@@ -106,7 +107,6 @@ let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
             \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$', '\.DS_STORE$',
             \ '\.embed\.manifest$', '\.embed\.manifest.res$',
             \ '\.intermediate\.manifest$', '^mt.dep$' ]
-"
 
 au FileType c setl shiftwidth=2 tabstop=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
