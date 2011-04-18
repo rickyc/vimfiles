@@ -133,11 +133,15 @@ if has("gui_running")
 	set guioptions-=L
     set cursorcolumn
 	set cursorline
+    "irblack settings
 	color ir_black
+	set transparency=10
+
+    "color molokai2
+	"set transparency=3
 	"color molokai
 	"highlight Normal guibg=grey3
 	"highlight NonText guibg=grey3
-	set transparency=10
 	set ofu=syntaxcomplete#Complete
 endif 
 
