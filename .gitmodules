@@ -58,3 +58,6 @@
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/coffee-haml-filter"]
+	path = bundle/coffee-haml-filter
+	url = https://github.com/gerad/coffee-haml-filter.git

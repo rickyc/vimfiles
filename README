@@ -3,6 +3,7 @@ a                                   http://www.vim.org/scripts/script.php?script
 ack                                 http://github.com/mileszs/ack.vim
 arduino                             http://www.vim.org/scripts/script.php?script_id=2654
 cocoa.vim                           http://github.com/msanders/cocoa.vim
+coffee-haml-filter                  http://github.com/gerad/coffee-haml-filter
 color-scheme-menu-maker             http://www.vim.org/scripts/script.php?script_id=2004
 color_sample_pack                   http://www.vim.org/scripts/script.php?script_id=625
 grep                                http://www.vim.org/scripts/script.php?script_id=311
