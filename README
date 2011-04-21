@@ -19,6 +19,7 @@ surround                            http://github.com/tpope/vim-surround
 syntastic                           http://www.vim.org/scripts/script.php?script_id=2736
 taglist.vim                         http://vim-taglist.sourceforge.net/
 vim-autocomplpop                    http://www.vim.org/scripts/script.php?script_id=1879
+vim-coffee-script                   http://github.com/kchmck/vim-coffee-script
 vim-cucumber                        http://github.com/tpope/vim-cucumber
 vim-fugitive                        http://github.com/tpope/vim-fugitive
 vim-fuzzy-finder-textmate-bundle    http://github.com/nate/vim-fuzzy-finder-textmate-bundle
