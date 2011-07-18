@@ -124,6 +124,7 @@ map <leader>a :Ack<space>
 
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+color ir_black
 
 if has("gui_running")
 	"set guifont=Menlo:h11
@@ -134,7 +135,6 @@ if has("gui_running")
     set cursorcolumn
 	set cursorline
     "irblack settings
-	color ir_black
 	set transparency=10
 
     "color molokai2
