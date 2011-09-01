@@ -1,10 +1,6 @@
 export TERM=xterm-color
 #export TERM=xterm-256color
 
-# load custom bash stuff machine specific
-# remove if these lines if you use this script
-source .bash_globals
-
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1 
 
@@ -28,6 +24,8 @@ alias prey="sudo /usr/share/prey/prey.sh --check"
 
 alias log="tail -f log/development.log"
 alias startrq="QUEUE=* rake resque:work"
+alias cleardb="rake db:test:prepare"
+alias sp="bundle exec rspec"
 
 ## engineyard
 alias eyds="ey deploy -e knicks_staging"

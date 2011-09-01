@@ -19,6 +19,7 @@ snipmate.vim                        http://github.com/msanders/snipmate.vim
 supertab                            http://www.vim.org/scripts/script.php?script_id=1643
 syntastic                           http://www.vim.org/scripts/script.php?script_id=2736
 taglist.vim                         http://vim-taglist.sourceforge.net/
+tagbar                              https://github.com/majutsushi/tagbar.git
 vim-autocomplpop                    http://www.vim.org/scripts/script.php?script_id=1879
 vim-bufexplorer                     http://github.com/slack/vim-bufexplorer
 vim-cucumber                        http://github.com/tpope/vim-cucumber
@@ -31,6 +32,7 @@ vim-rack                            http://github.com/dasch/vim-rack
 vim-ragtag                          http://github.com/tpope/vim-ragtag
 vim-rails                           http://github.com/tpope/vim-rails
 vim-repeat                          http://github.com/tpope/vim-repeat
+vim-scratch                         https://github.com/duff/vim-scratch
 vim-surround                        http://github.com/tpope/vim-surround
 vim-yankring                        http://github.com/chrismetcalf/vim-yankring
 

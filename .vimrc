@@ -5,6 +5,7 @@ runtime! debian.vim
 
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>v :e $MYVIMRC
+:nmap <Leader>o :ZoomWin<CR>
 :nmap <c-a> :A<CR>
 
 let g:alternateExtensions_h = "m,c"

@@ -61,3 +61,12 @@
 [submodule "bundle/coffee-haml-filter"]
 	path = bundle/coffee-haml-filter
 	url = https://github.com/gerad/coffee-haml-filter.git
+[submodule "bundle/ZoomWin"]
+	path = bundle/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin
+[submodule "bundle/vim-scratch"]
+	path = bundle/vim-scratch
+	url = https://github.com/duff/vim-scratch
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
