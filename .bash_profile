@@ -21,11 +21,14 @@ export rvm_gems_path="$HOME/.rvm/gems"
 
 alias mysql-start="cd /usr/local/Cellar/mysql/5.5.14/ ; /usr/local/Cellar/mysql/5.5.14//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
+alias flush="dscacheutil -flushcache"
+alias doc="bundle exec rspec spec --format documentation"
 
 alias log="tail -f log/development.log"
 alias startrq="QUEUE=* rake resque:work"
 alias cleardb="rake db:test:prepare"
 alias sp="bundle exec rspec"
+alias v="cd ~/.vim"
 
 ## engineyard
 alias eyds="ey deploy -e knicks_staging"
