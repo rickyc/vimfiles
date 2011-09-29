@@ -55,6 +55,7 @@ alias gr="git rm"
 alias gu="git pull --rebase && git push origin HEAD"
 alias gloggraph="git log --pretty=format:'%h : %s' --graph"
 alias glog="git log --pretty=format:'%h was %an, %ar, message: %s'"
+alias gtree='git log --graph --oneline --all'
 
 #alias gco="git checkout"
 
