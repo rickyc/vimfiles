@@ -82,3 +82,6 @@
 [submodule "bundle/supertab-continued"]
 	path = bundle/supertab-continued
 	url = https://github.com/vim-scripts/SuperTab-continued..git
+[submodule "bundle/search-complete"]
+	path = bundle/search-complete
+	url = https://github.com/vim-scripts/SearchComplete.git
