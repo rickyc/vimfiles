@@ -85,3 +85,6 @@
 [submodule "bundle/search-complete"]
 	path = bundle/search-complete
 	url = https://github.com/vim-scripts/SearchComplete.git
+[submodule "bundle/color-scheme-menu-maker"]
+	path = bundle/color-scheme-menu-maker
+	url = https://github.com/vim-scripts/ColorSchemeMenuMaker.git
