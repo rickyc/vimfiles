@@ -79,3 +79,6 @@
 [submodule "bundle/color-sampler-pack"]
 	path = bundle/color-sampler-pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "bundle/supertab-continued"]
+	path = bundle/supertab-continued
+	url = https://github.com/vim-scripts/SuperTab-continued..git
