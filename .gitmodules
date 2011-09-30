@@ -88,3 +88,9 @@
 [submodule "bundle/color-scheme-menu-maker"]
 	path = bundle/color-scheme-menu-maker
 	url = https://github.com/vim-scripts/ColorSchemeMenuMaker.git
+[submodule "vim-json"]
+	path = vim-json
+	url = https://github.com/vim-scripts/JSON.vim.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = https://github.com/vim-scripts/JSON.vim.git
