@@ -73,3 +73,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-peepopen"]
+	path = bundle/vim-peepopen
+	url = https://github.com/topfunky/PeepOpen-EditorSupport.git
