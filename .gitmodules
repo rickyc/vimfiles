@@ -76,3 +76,6 @@
 [submodule "bundle/vim-peepopen"]
 	path = bundle/vim-peepopen
 	url = https://github.com/topfunky/PeepOpen-EditorSupport.git
+[submodule "bundle/color-sampler-pack"]
+	path = bundle/color-sampler-pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
