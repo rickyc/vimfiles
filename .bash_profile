@@ -23,6 +23,7 @@ alias mysql-start="cd /usr/local/Cellar/mysql/5.5.14/ ; /usr/local/Cellar/mysql/
 alias prey="sudo /usr/share/prey/prey.sh --check"
 alias flush="dscacheutil -flushcache"
 alias doc="bundle exec rspec spec --format documentation"
+alias bx="bundle exec"
 
 alias log="tail -f log/development.log"
 alias startrq="QUEUE=* rake resque:work"
