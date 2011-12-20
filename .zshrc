@@ -24,12 +24,11 @@ ZSH_THEME="cloud"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby textmate)
+plugins=(ruby brew cloudapp gem heroku node npm pow rvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # environment variables
-#export rvm_path="/usr/local/rvm"
 export rvm_path="/usr/local/rvm"
 export PATH=.:~/bin:/usr/local/bin:/usr/bin:/usr/local:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:$EC2_HOME/bin:~/gwt:$PATH
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local:/usr/local/sbin:/usr/local/bin:/usr/X11/bin:/opt/X11/bin"
