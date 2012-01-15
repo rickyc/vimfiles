@@ -7,6 +7,7 @@ coffee-haml-filter                  http://github.com/gerad/coffee-haml-filter
 coffee-script                       http://github.com/kchmck/vim-coffee-script
 color-scheme-menu-maker             http://www.vim.org/scripts/script.php?script_id=2004
 color_sample_pack                   http://www.vim.org/scripts/script.php?script_id=625
+command-t                           https://github.com/wincent/Command-T
 grep                                http://www.vim.org/scripts/script.php?script_id=311
 javaScriptLint                      http://github.com/joestelmach/javaScriptLint.vim
 jquery                              http://www.vim.org/scripts/script.php?script_id=2416
@@ -40,6 +41,7 @@ NOTES
 taglist requires exuberant ctags utility <http://ctags.sourceforge.net>
 javascriptJSLint requires javascriptlint <http://www.javascriptlint.com/download.htm>
 ack.vim requires ack <http://betterthangrep.com/>
+command-t requires you to build the C extension, cd bundle/command-t/ruby/command-t/ ; ruby extconf.rb ; make
 
 Install with Homebrew <https://github.com/mxcl/homebrew>
 brew install ctags

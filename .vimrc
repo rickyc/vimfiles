@@ -11,6 +11,8 @@ runtime! debian.vim
 let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
 
+let g:CommandTMaxHeight = 15
+
 if !has("autocmd")
     filetype off
 end
