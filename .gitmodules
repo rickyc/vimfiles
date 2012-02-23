@@ -103,3 +103,9 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "bundle/vim-ruby-doc"]
+	path = bundle/vim-ruby-doc
+	url = git://github.com/lucapette/vim-ruby-doc.git
+[submodule "bundle/apidock.vim"]
+	path = bundle/apidock.vim
+	url = https://github.com/mileszs/apidock.vim.git

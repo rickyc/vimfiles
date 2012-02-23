@@ -8,6 +8,7 @@ runtime! debian.vim
 :nmap <Leader>o :ZoomWin<CR>
 :nmap <c-a> :A<CR>
 
+
 let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
 

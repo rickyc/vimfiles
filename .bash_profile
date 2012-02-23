@@ -5,10 +5,9 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1 
 
 # environment variables
-#export rvm_path="/usr/local/rvm"
 export rvm_path="/usr/local/rvm"
 export PATH=.:~/bin:/usr/local/bin:/usr/bin:/usr/local:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:$EC2_HOME/bin:~/gwt:$PATH
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local:/usr/local/sbin:/usr/local/bin:/usr/X11/bin:/opt/X11/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local:/usr/local/sbin:/usr/X11/bin:/opt/X11/bin"
 export PATH="/usr/local/pgsql/bin:$PATH" #postgres
 export MAGICK_HOME="/usr/local/imagemagick"
 export PATH=$MAGICK_HOME/bin:$PATH
@@ -30,14 +29,6 @@ alias startrq="QUEUE=* rake resque:work"
 alias cleardb="rake db:test:prepare"
 alias sp="bundle exec rspec"
 alias v="cd ~/.vim"
-
-## engineyard
-alias eyds="ey deploy -e knicks_staging"
-alias eydp="ey deploy -e knicksnow_production"
-alias sshs="ey ssh -e knicks_staging"
-alias sshp="ey ssh -e knicksnow_production"
-alias sshrs="ey ssh -e rangers_staging"
-alias sshrp="ey ssh -e rangers_production"
 
 ## git aliases
 alias gb="git branch -v"
