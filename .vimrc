@@ -114,7 +114,10 @@ let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
 
 au FileType c setl shiftwidth=2 tabstop=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype .*.js setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype .*.php setlocal ts=2 sts=2 sw=2
+autocmd Filetype php setlocal ts=2 sts=2 sw=2
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 
