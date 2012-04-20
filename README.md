@@ -12,6 +12,7 @@ PLUGINS
     grep                                http://www.vim.org/scripts/script.php?script_id=311  
     javaScriptLint                      http://github.com/joestelmach/javaScriptLint.vim  
     jquery                              http://www.vim.org/scripts/script.php?script_id=2416  
+    mark                                http://www.vim.org/scripts/script.php?script_id=2666
     matchit                             http://www.vim.org/scripts/script.php?script_id=39  
     minibufexpl                         http://www.vim.org/scripts/script.php?script_id=159  
     nerdcommenter                       http://github.com/scrooloose/nerdcommenter  
