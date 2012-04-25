@@ -26,6 +26,7 @@ call pathogen#runtime_append_all_bundles()
 au BufRead,BufNewFile *.lsh setfiletype lisp
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+au BufNewFile,BufRead *.hjs set syntax=handlebars
 
 " Vim-rails mvim init menu by default
 let g:rails_menu=1
