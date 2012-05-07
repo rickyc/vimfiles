@@ -6,13 +6,44 @@ runtime! debian.vim
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>v :e $MYVIMRC
 :nmap <Leader>o :ZoomWin<CR>
+:nmap <Leader>t :CtrlP<CR>
 :nmap <c-a> :A<CR>
 
+" Autocomplete
+"let g:neocomplcache_enable_at_startup = 1
 
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+function! s:check_back_space()"{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction"}}
+
+" Alternative
 let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
 
+" Deprecrated
 let g:CommandTMaxHeight = 15
+
+" CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
 
 if !has("autocmd")
     filetype off
@@ -27,6 +58,15 @@ au BufRead,BufNewFile *.lsh setfiletype lisp
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hjs set syntax=handlebars
+
+" Set indentation
+au FileType c setl shiftwidth=2 tabstop=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype .*.js setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype .*.php setlocal ts=2 sts=2 sw=2
+autocmd Filetype php setlocal ts=2 sts=2 sw=2
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 " Vim-rails mvim init menu by default
 let g:rails_menu=1
@@ -77,13 +117,13 @@ endif
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 " set background=dark
+"set smartindent
+"set backspace=start,eol
 set tabstop=4
 set expandtab
 set shiftwidth=4
 set autoindent
-"set smartindent
 set number
-"set backspace=start,eol
 set nowrap
 set ruler
 set showcmd		" Show (partial) command in status line.
@@ -113,14 +153,6 @@ let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
             \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$', '\.DS_STORE$',
             \ '\.embed\.manifest$', '\.embed\.manifest.res$',
             \ '\.intermediate\.manifest$', '^mt.dep$' ]
-
-au FileType c setl shiftwidth=2 tabstop=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype .*.js setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype .*.php setlocal ts=2 sts=2 sw=2
-autocmd Filetype php setlocal ts=2 sts=2 sw=2
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 
 "set grepprg=ack
