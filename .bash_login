@@ -1,5 +1,5 @@
-#export TERM=xterm-color
-#export TERM=xterm-256color
+export TERM=xterm-color
+export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1 
 
@@ -17,7 +17,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #export rvm_gems_path="$HOME/.rvm/gems"
 
-alias mysql-start="cd /usr/local/Cellar/mysql/5.5.14/ ; /usr/local/Cellar/mysql/5.5.14//bin/mysqld_safe &"
+alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
 alias flush="dscacheutil -flushcache"
 alias doc="bundle exec rspec spec --format documentation"
@@ -273,6 +273,4 @@ parse_git_branch() {
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@localhost - ${PWD}\007" '
 my_prompt
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
