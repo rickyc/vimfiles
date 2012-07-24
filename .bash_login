@@ -16,12 +16,15 @@ export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #export rvm_gems_path="$HOME/.rvm/gems"
+export PATH=/usr/local/bin:$PATH
 
 alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
 alias flush="dscacheutil -flushcache"
 alias doc="bundle exec rspec spec --format documentation"
 alias bx="bundle exec"
+alias mem="/usr/local/bin/memcached"
+alias pg-start='postgres -D /usr/local/var/postgres'
 
 alias log="tail -f log/development.log"
 alias startrq="QUEUE=* rake resque:work"
