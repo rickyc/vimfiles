@@ -42,6 +42,7 @@ au BufRead,BufNewFile *.lsh setfiletype lisp
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hjs set syntax=handlebars
+au BufNewFile,BufRead *.styl set syntax=sass
 
 " Set indentation
 au FileType c setl shiftwidth=2 tabstop=2
