@@ -34,9 +34,6 @@
 [submodule "bundle/vim-fuzzy-finder-textmate-bundle"]
 	path = bundle/vim-fuzzy-finder-textmate-bundle
 	url = git://github.com/nate/vim-fuzzy-finder-textmate-bundle.git
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
@@ -103,9 +100,6 @@
 [submodule "bundle/vim-ruby-doc"]
 	path = bundle/vim-ruby-doc
 	url = git://github.com/lucapette/vim-ruby-doc.git
-[submodule "bundle/apidock.vim"]
-	path = bundle/apidock.vim
-	url = https://github.com/mileszs/apidock.vim.git
 [submodule "bundle/handlebars"]
 	path = bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
@@ -115,3 +109,12 @@
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-rooter"]
+	path = bundle/vim-rooter
+	url = https://github.com/airblade/vim-rooter.git

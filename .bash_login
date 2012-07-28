@@ -17,6 +17,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #export rvm_gems_path="$HOME/.rvm/gems"
 export PATH=/usr/local/bin:$PATH
+export behavior_data_mart_url=http://localhost:3000
 
 alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
