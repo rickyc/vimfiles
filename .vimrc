@@ -154,7 +154,9 @@ color ir_black
 
 if has("gui_running")
 	"set guifont=Menlo:h11
-	set guifont=DejaVu_Sans_Mono:h11
+    set guifont=DejaVu_Sans_Mono:h11
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+    let Powerline_symbols = 'fancy'
 	set guioptions-=T
 	set guioptions-=R
 	set guioptions-=L
