@@ -18,6 +18,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 #export rvm_gems_path="$HOME/.rvm/gems"
 export PATH=/usr/local/bin:$PATH
 export behavior_data_mart_url=http://localhost:3000
+export front_end_url=http://localhost:5000
 
 alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
@@ -32,6 +33,7 @@ alias startrq="QUEUE=* rake resque:work"
 alias cleardb="rake db:test:prepare"
 alias sp="bundle exec rspec"
 alias v="cd ~/.vim"
+#ctags -R
 
 ## git aliases
 alias gb="git branch -v"
