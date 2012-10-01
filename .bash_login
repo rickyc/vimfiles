@@ -1,7 +1,9 @@
 export TERM=xterm-color
 export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1 
+export CLICOLOR=1
+
+export FF=~/Applications/Firefox.app/Contents/MacOS/firefox
 
 # environment variables
 #export rvm_path="/usr/local/rvm"
@@ -17,8 +19,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 #export rvm_gems_path="$HOME/.rvm/gems"
 export PATH=/usr/local/bin:$PATH
-export behavior_data_mart_url=http://localhost:3000
-export front_end_url=http://localhost:5000
+#export behavior_data_mart_url=http://localhost:3000
+#export front_end_url=http://localhost:5000
 
 alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
@@ -27,6 +29,7 @@ alias doc="bundle exec rspec spec --format documentation"
 alias bx="bundle exec"
 alias mem="/usr/local/bin/memcached"
 alias pg-start='postgres -D /usr/local/var/postgres'
+alias optimize="tchmgr optimize /Users/ricky/Library/Application\ Support/Sparrow/rickyc.us@gmail.com.sparrowdb/data.db/data.tch"
 
 alias log="tail -f log/development.log"
 alias startrq="QUEUE=* rake resque:work"
@@ -127,7 +130,7 @@ fi
 
 #alias show='cat ~/.dirs'
 save (){
-    command sed "/!$/d" ~/.dirs > ~/.dirs1; \mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ; 
+    command sed "/!$/d" ~/.dirs > ~/.dirs1; \mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
 }
 source ~/.dirs  # Initialization for the above 'save' facility: source the .sdirs file
 shopt -s cdable_vars # set the bash option so that no '$' is required when using the above facility
@@ -190,7 +193,7 @@ function elite_prompt {
     local temp=$(tty)
     local GRAD1=${temp:5}
     local        BLUE="\[\033[0;34m\]"
-    
+
     PS1="$TITLEBAR\
     $GRAY-$CYAN-$LIGHT_CYAN(\
     $CYAN\u$GRAY@$CYAN\h\
@@ -202,7 +205,7 @@ function elite_prompt {
     $LIGHT_GRAY\n\
     $GRAY-$CYAN-$LIGHT_CYAN(\
     $CYAN\$$GRAY:$CYAN\w\
-    $LIGHT_CYAN)$CYAN-$GRAY-$LIGHT_GRAY " 
+    $LIGHT_CYAN)$CYAN-$GRAY-$LIGHT_GRAY "
     PS2="$LIGHT_CYAN-$CYAN-$GRAY-$NO_COLOUR "
 }
 
@@ -215,12 +218,12 @@ function elite_prompt {
 export SV_USER='jm'  # Change this to your username that you normally use on subversion (only if it is different from your logged in name)
 export SVN_EDITOR='${EDITOR}'
 
-alias svshowcommands="echo -e '${COLOR_BROWN}Available commands: 
+alias svshowcommands="echo -e '${COLOR_BROWN}Available commands:
    ${COLOR_GREEN}sv
    ${COLOR_GREEN}sv${COLOR_NC}help
    ${COLOR_GREEN}sv${COLOR_NC}import    ${COLOR_GRAY}Example: import ~/projects/my_local_folder http://svn.foo.com/bar
    ${COLOR_GREEN}sv${COLOR_NC}checkout  ${COLOR_GRAY}Example: svcheckout http://svn.foo.com/bar
-   ${COLOR_GREEN}sv${COLOR_NC}status    
+   ${COLOR_GREEN}sv${COLOR_NC}status
    ${COLOR_GREEN}sv${COLOR_NC}status${COLOR_GREEN}on${COLOR_NC}server
    ${COLOR_GREEN}sv${COLOR_NC}add       ${COLOR_GRAY}Example: svadd your_file
    ${COLOR_GREEN}sv${COLOR_NC}add${COLOR_GREEN}all${COLOR_NC}    ${COLOR_GRAY}Note: adds all files not in repository [recursively]
@@ -231,7 +234,7 @@ alias svshowcommands="echo -e '${COLOR_BROWN}Available commands:
    ${COLOR_GREEN}sv${COLOR_NC}get${COLOR_GREEN}info${COLOR_NC}   ${COLOR_GRAY}Example: svgetinfo your_file
    ${COLOR_GREEN}sv${COLOR_NC}blame     ${COLOR_GRAY}Example: svblame your_file
 '"
-   
+
 alias sv='svn --username ${SV_USER}'
 alias svimport='sv import'
 alias svcheckout='sv checkout'
@@ -242,7 +245,7 @@ alias svcommit='sv commit'
 alias svadd='svn add'
 alias svaddall='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
 alias svdelete='sv delete'
-alias svhelp='svn help' 
+alias svhelp='svn help'
 alias svblame='sv blame'
 
 svgetinfo (){
@@ -256,7 +259,7 @@ alias svdiff='sv diff --diff-cmd fmdiff' # OS-X SPECIFIC
 
 
 ## set vi keybindings
-set -o vi 
+set -o vi
 
 #==============================================================================
 if [ "$SSH_TTY" ]; then
