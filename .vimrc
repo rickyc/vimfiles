@@ -19,6 +19,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+
+" Clear all white space on save
+autocmd BufWritePre *.* :%s/\s\+$//e
+
 " Alternative
 let g:alternateExtensions_h = "m,c"
 let g:alternateExtensions_m = "h"
@@ -34,7 +38,7 @@ if !has("autocmd")
 end
 
 " Pathogen >> http://github.com/tpope/vim-pathogen
-call pathogen#runtime_append_all_bundles() 
+call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 
 " setting lush syntax to default to lisp
@@ -43,6 +47,8 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hjs set syntax=handlebars
 au BufNewFile,BufRead *.styl set syntax=sass
+au BufNewFile,BufRead .bash_login set syntax=sh
+
 
 " Set indentation
 au FileType c setl shiftwidth=2 tabstop=2
@@ -67,13 +73,13 @@ function! RunSpec(args)
  let cmd = ":! " . spec . " % -cfn " . a:args
  execute cmd
 endfunction
- 
+
 " Mappings
 " run one rspec example or describe block based on cursor position
 map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
 " run full rspec file
 map !S :call RunSpec("")
- 
+
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -104,21 +110,22 @@ endif
 " set background=dark
 "set smartindent
 "set backspace=start,eol
-set tabstop=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
-set shiftwidth=4
 set autoindent
 set number
 set nowrap
 set ruler
-set showcmd		" Show (partial) command in status line.
+set showcmd		  " Show (partial) command in status line.
 set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
+set ignorecase	" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
-set hidden             " Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes) in terminals
+set hidden      " Hide buffers when they are abandoned
+set mouse=a		  " Enable mouse usage (all modes) in terminals
 set hlsearch
 
 "TagList Plugin
@@ -150,28 +157,29 @@ map <leader>a :Ack<space>
 
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-color ir_black
+"color ir_black
+color Tomorrow-Night-Eighties
 
 if has("gui_running")
-	"set guifont=Menlo:h11
-    set guifont=DejaVu_Sans_Mono:h11
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-    let Powerline_symbols = 'fancy'
-	set guioptions-=T
-	set guioptions-=R
-	set guioptions-=L
-    set cursorcolumn
-	set cursorline
-    "irblack settings
-	set transparency=10
+  "set guifont=Menlo:h11
+  set guifont=DejaVu_Sans_Mono:h11
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+  let Powerline_symbols = 'fancy'
+  set guioptions-=T
+  set guioptions-=R
+  set guioptions-=L
+  set cursorcolumn
+  set cursorline
+  "irblack settings
+  set transparency=10
 
-    "color molokai2
-	"set transparency=3
-	"color molokai
-	"highlight Normal guibg=grey3
-	"highlight NonText guibg=grey3
-	set ofu=syntaxcomplete#Complete
-endif 
+  "color molokai2
+  "set transparency=3
+  "color molokai
+  "highlight Normal guibg=grey3
+  "highlight NonText guibg=grey3
+  set ofu=syntaxcomplete#Complete
+endif
 
 if has("gui_running")
     " Enable heavy omni completion.
@@ -190,4 +198,3 @@ if has("gui_running")
         return !col || getline('.')[col - 1] =~ '\s'
     endfunction"}}
 endif
-
