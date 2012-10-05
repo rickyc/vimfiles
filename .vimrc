@@ -1,5 +1,6 @@
 set nocompatible
 runtime! debian.vim
+set shell=/bin/bash\ -l
 "set lines=35
 "set columns=100
 
