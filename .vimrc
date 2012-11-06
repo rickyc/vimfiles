@@ -10,6 +10,8 @@ set shell=/bin/bash\ -l
 :nmap <Leader>t :CtrlP<CR>
 :nmap <c-a> :A<CR>
 
+nnoremap gp `[v`]
+
 " Autocomplete
 "let g:neocomplcache_enable_at_startup = 1
 
@@ -167,8 +169,9 @@ if has("gui_running")
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
   let Powerline_symbols = 'fancy'
   set guioptions-=T
-  set guioptions-=R
+  set guioptions-=r
   set guioptions-=L
+
   set cursorcolumn
   set cursorline
   "irblack settings
