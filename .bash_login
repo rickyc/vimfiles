@@ -22,14 +22,15 @@ export PATH=/usr/local/bin:$PATH
 #export behavior_data_mart_url=http://localhost:3000
 #export front_end_url=http://localhost:5000
 
-alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias prey="sudo /usr/share/prey/prey.sh --check"
 alias flush="dscacheutil -flushcache"
 alias doc="bundle exec rspec spec --format documentation"
 alias bx="bundle exec"
-alias mem="/usr/local/bin/memcached"
-alias pg-start='postgres -D /usr/local/var/postgres'
 alias optimize="tchmgr optimize /Users/ricky/Library/Application\ Support/Sparrow/rickyc.us@gmail.com.sparrowdb/data.db/data.tch"
+alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
+alias mem-start="/usr/local/bin/memcached"
+alias pg-start='postgres -D /usr/local/var/postgres'
+alias pony-start='ponyd serve --listen-interface=127.0.0.1'
 
 alias log="tail -f log/development.log"
 alias startrq="QUEUE=* rake resque:work"
