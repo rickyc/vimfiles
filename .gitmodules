@@ -72,7 +72,7 @@
 	url = https://github.com/topfunky/PeepOpen-EditorSupport.git
 [submodule "bundle/color-sampler-pack"]
 	path = bundle/color-sampler-pack
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
 [submodule "bundle/supertab-continued"]
 	path = bundle/supertab-continued
 	url = https://github.com/vim-scripts/SuperTab-continued..git
