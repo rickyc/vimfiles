@@ -12,6 +12,12 @@ set shell=/bin/bash\ -l
 
 nnoremap gp `[v`]
 
+" Tabularize Hackery!
+nmap <Leader>z= :Tabularize /=<CR>
+vmap <Leader>z= :Tabularize /=<CR>
+nmap <Leader>z: :Tabularize /:\zs<CR>
+vmap <Leader>z: :Tabularize /:\zs<CR>
+
 " Autocomplete
 "let g:neocomplcache_enable_at_startup = 1
 
