@@ -118,3 +118,12 @@
 [submodule "bundle/colour-sampler-pack"]
 	path = bundle/colour-sampler-pack
 	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
+[submodule "bundle/vim-backbone"]
+	path = bundle/vim-backbone
+	url = git://github.com/mklabs/vim-backbone.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
