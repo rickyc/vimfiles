@@ -28,7 +28,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-
 " Clear all white space on save
 autocmd BufWritePre *.* :%s/\s\+$//e
 
@@ -39,8 +38,12 @@ let g:alternateExtensions_m = "h"
 " Deprecrated
 let g:CommandTMaxHeight = 15
 
+" Git Gutter
+let g:gitgutter_enabled = 1
+
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
+let g:ctrlp_follow_symlinks = 2
 
 if !has("autocmd")
     filetype off
@@ -50,7 +53,7 @@ end
 call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 
-" setting lush syntax to default to lisp
+" Setting lush syntax to default to lisp
 au BufRead,BufNewFile *.lsh setfiletype lisp
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
@@ -140,6 +143,10 @@ set hlsearch
 "TagList Plugin
 let Tlist_Use_Right_Window = 0
 
+
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
@@ -191,8 +198,15 @@ if has("gui_running")
   set ofu=syntaxcomplete#Complete
 endif
 
+set undodir=~/.vimundo
+set undofile
+set undolevels=10000 "maximum number of changes that can be undone
+set undoreload=5000000 "maximum number lines to save for undo on a buffer reload
+
 if has("gui_running")
     " Enable heavy omni completion.
+    highlight clear SignColumn
+
     if !exists('g:neocomplcache_omni_patterns')
         let g:neocomplcache_omni_patterns = {}
     endif
