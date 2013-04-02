@@ -1,0 +1,3 @@
+# http://brettterpstra.com/2011/08/12/option-arrow-navigation-in-iterm2/
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word

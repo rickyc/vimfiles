@@ -41,6 +41,7 @@ alias startrq="QUEUE=* rake resque:work"
 alias cleardb="rake db:test:prepare"
 alias sp="bundle exec rspec"
 alias v="cd ~/.vim"
+alias z='zeus'
 #ctags -R
 
 ## git aliases
