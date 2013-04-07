@@ -64,6 +64,13 @@ alias glog="git log --pretty=format:'%h was %an, %ar, message: %s'"
 alias gtree='git log --graph --oneline --all'
 alias gsu='git submodule foreach git pull origin'
 
+# Heroku
+alias hc='heroku run console'
+alias hl='heroku logs --tail'
+alias hr='heroku run rake db:migrate'
+alias hrestart='heroku restart'
+alias hconfig='heroku config'
+
 #alias gco="git checkout"
 
 function gco {
