@@ -10,6 +10,11 @@ set shell=/bin/bash\ -l
 :nmap <Leader>t :CtrlP<CR>
 :nmap <c-a> :A<CR>
 
+
+map <Leader>c :call RunCurrentSpecFile()<CR>
+map <Leader>x :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+
 nnoremap gp `[v`]
 
 " Tabularize Hackery!
