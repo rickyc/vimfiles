@@ -250,3 +250,4 @@ export PROMPT_COMMAND='echo -ne "\033]0;${USER}@localhost - ${PWD}\007" '
 my_prompt
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s /Users/ricky/.nvm/nvm.sh ]] && . /Users/ricky/.nvm/nvm.sh
