@@ -8,6 +8,8 @@ set shell=/bin/bash\ -l
 :nmap <Leader>v :e $MYVIMRC
 :nmap <Leader>o :ZoomWin<CR>
 :nmap <Leader>t :CtrlP<CR>
+:nmap <Leader>q :set transparency=0<CR>
+:nmap <Leader>w :set transparency=10<CR>
 :nmap <c-a> :A<CR>
 
 
