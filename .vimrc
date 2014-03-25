@@ -229,3 +229,19 @@ if has("gui_running")
         return !col || getline('.')[col - 1] =~ '\s'
     endfunction"}}
 endif
+
+"if executable('coffeetags')
+"  let g:tagbar_type_coffee = {
+"        \ 'ctagsbin' : 'coffeetags',
+"        \ 'ctagsargs' : '',
+"        \ 'kinds' : [
+"        \ 'f:functions',
+"        \ 'o:object',
+"        \ ],
+"        \ 'sro' : ".",
+"        \ 'kind2scope' : {
+"        \ 'f' : 'object',
+"        \ 'o' : 'object',
+"        \ }
+"        \ }
+"endif

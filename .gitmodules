@@ -133,3 +133,6 @@
 [submodule "bundle/vim-handlebars"]
 	path = bundle/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "bundle/vim-mode"]
+	path = bundle/vim-mode
+	url = git://github.com/mustache/vim-mode.git
