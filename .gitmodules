@@ -136,3 +136,6 @@
 [submodule "bundle/vim-mode"]
 	path = bundle/vim-mode
 	url = git://github.com/mustache/vim-mode.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = https://github.com/slim-template/vim-slim
