@@ -67,6 +67,7 @@ au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hjs set syntax=handlebars
 au BufNewFile,BufRead *.styl set syntax=sass
 au BufNewFile,BufRead .bash_login set syntax=sh
+"au FileType javascript call JavaScriptFold()
 
 
 " Set indentation
