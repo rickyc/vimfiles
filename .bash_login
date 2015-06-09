@@ -64,6 +64,9 @@ alias glogp="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cg
 alias gtree='git log --graph --oneline --all'
 alias gsu='git submodule foreach git pull origin'
 
+# delete branches that are already merged
+alias gbdm='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+
 # Heroku
 alias hc='heroku run console'
 alias hl='heroku logs --tail'
