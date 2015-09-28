@@ -50,6 +50,7 @@ let g:gitgutter_enabled = 1
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
+let g:ctrlp_custom_ignore = 'log\|node_modules\|DS_Store\|git'
 let g:ctrlp_follow_symlinks = 2
 
 if !has("autocmd")
