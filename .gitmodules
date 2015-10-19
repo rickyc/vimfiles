@@ -28,9 +28,6 @@
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
-[submodule "bundle/taglist.vim"]
-	path = bundle/taglist.vim
-	url = git://github.com/esukram/vim-taglist.git
 [submodule "bundle/vim-fuzzy-finder-textmate-bundle"]
 	path = bundle/vim-fuzzy-finder-textmate-bundle
 	url = git://github.com/nate/vim-fuzzy-finder-textmate-bundle.git
@@ -139,9 +136,9 @@
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
 	url = https://github.com/slim-template/vim-slim
-[submodule "bundle/vim-javascript-syntax"]
-	path = bundle/vim-javascript-syntax
-	url = git@github.com:jelera/vim-javascript-syntax.git
 [submodule "bundle/vim-livedown"]
 	path = bundle/vim-livedown
 	url = git@github.com:shime/vim-livedown.git
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = git://github.com/esukram/vim-taglist.git
