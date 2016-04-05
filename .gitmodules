@@ -142,3 +142,15 @@
 [submodule "bundle/taglist.vim"]
 	path = bundle/taglist.vim
 	url = git://github.com/esukram/vim-taglist.git
+[submodule "bundle/vim-js-syntax"]
+	path = bundle/vim-js-syntax
+	url = git@github.com:jelera/vim-javascript-syntax.git
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git
+[submodule "bundle/yajs2"]
+	path = bundle/yajs2
+	url = git@github.com:othree/yajs.vim.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git

@@ -50,7 +50,10 @@ let g:gitgutter_enabled = 1
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
-let g:ctrlp_custom_ignore = 'log\|node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|log$\|cookbooks$\|node_modules$\|project_files$\|test$',
+      \ 'file': '.exe$|.so$|.dat$'
+      \ }
 let g:ctrlp_follow_symlinks = 2
 
 if !has("autocmd")
@@ -63,7 +66,7 @@ call pathogen#runtime_append_all_bundles()
 
 " Setting lush syntax to default to lisp
 au BufRead,BufNewFile *.lsh setfiletype lisp
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+"au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.hjs set syntax=handlebars
 au BufNewFile,BufRead *.styl set syntax=sass
@@ -182,8 +185,11 @@ map <leader>a :Ack<space>
 
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+set background=dark
 "color ir_black
-color Tomorrow-Night-Eighties
+color Tomorrow-Night-Eighties-modified
+"autocmd FileType * colorscheme Tomorrow-Night-Eighties
+"autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
 
 if has("gui_running")
   "set guifont=Menlo:h11

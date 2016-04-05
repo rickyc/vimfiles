@@ -28,7 +28,7 @@ alias bx="bundle exec"
 #alias optimize="tchmgr optimize /Users/ricky/Library/Application\ Support/Sparrow/email-addy@gmail.com.sparrowdb/data.db/data.tch"
 alias mysql-start="cd /usr/local/Cellar/mysql/5.5.25/ ; /usr/local/Cellar/mysql/5.5.25//bin/mysqld_safe &"
 alias mem-start="/usr/local/bin/memcached"
-alias pg-start='ulimit -s hard; sudo sysctl -w kern.sysv.shmall=1073741824; sudo sysctl -w kern.sysv.shmmax=1073741824; postgres -D /usr/local/var/postgres'
+alias pg-start='ulimit -s hard; sudo sysctl -w kern.sysv.shmall=1073741824; sudo sysctl -w kern.sysv.shmmax=1073741824; postgres -D /usr/local/var/postgres9.5'
 alias elastic-start='elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
 alias pony-start='ponyd serve --listen-interface=127.0.0.1'
 alias ssl-start='rvmsudo tunnels'
@@ -47,8 +47,8 @@ alias z='zeus'
 ## git aliases
 alias gb="git branch -v"
 alias gba="git branch -a"
-alias gc="git commit -v"
-alias gca="git commit -a"
+alias gc="git commit -S -v"
+alias gca="git commit -S -a"
 alias gd="git diff"
 alias gl="git pull --rebase"
 alias glo="git pull origin"
@@ -67,6 +67,8 @@ alias gsu='git submodule foreach git pull origin'
 
 # delete branches that are already merged
 alias gbdm='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+alias gbdm2='git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d'
+
 
 # Heroku
 alias hc='heroku run console'
