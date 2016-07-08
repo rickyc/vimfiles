@@ -1,6 +1,6 @@
-set nocompatible
-runtime! debian.vim
-set shell=/bin/bash\ -l
+"set nocompatible
+"runtime! debian.vim
+"set shell=/bin/bash\ -l
 "set lines=35
 "set columns=100
 
@@ -12,6 +12,12 @@ set shell=/bin/bash\ -l
 :nmap <Leader>w :set transparency=10<CR>
 :nmap <c-a> :A<CR>
 
+"Rubocop
+"let g:syntastic_enable_signs=1
+"let g:syntastic_ruby_checkers=['rubocop', 'mri']
+"let g:vimrubocop_keymap = 0
+
+"nmap <Leader>w :RuboCop<CR>
 
 map <Leader>c :call RunCurrentSpecFile()<CR>
 map <Leader>x :call RunNearestSpec()<CR>
@@ -29,11 +35,11 @@ vmap <Leader>z: :Tabularize /:\zs<CR>
 "let g:neocomplcache_enable_at_startup = 1
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Clear all white space on save
 autocmd BufWritePre *.* :%s/\s\+$//e
