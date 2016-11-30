@@ -1,8 +1,36 @@
-"set nocompatible
-"runtime! debian.vim
-"set shell=/bin/bash\ -l
-"set lines=35
-"set columns=100
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'mtth/scratch.vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'mileszs/ack.vim'
+Plug 'vim-scripts/ZoomWin'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/L9'
+Plug 'othree/vim-autocomplpop'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-scripts/Mark'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'vim-scripts/YankRing.vim'
+Plug 'tpope/vim-rails'
+Plug 'sjl/gundo.vim'
+
+call plug#end()
+
+" Nerdtree
+nmap <F7> :NERDTreeToggle<CR>
+
+"let g:syntastic_mode_map = { 'passive_filetypes': ['scss'] }
+"let g:syntastic_javascript_checkers = ["eslint"]
 
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>v :e $MYVIMRC
@@ -10,7 +38,13 @@
 :nmap <Leader>t :CtrlP<CR>
 :nmap <Leader>q :set transparency=0<CR>
 :nmap <Leader>w :set transparency=10<CR>
-:nmap <c-a> :A<CR>
+
+"nnoremap <A-j> :m+<CR>==
+"nnoremap <A-k> :m-2<CR>==
+"inoremap <A-j> <Esc>:m+<CR>==gi
+"inoremap <A-k> <Esc>:m-2<CR>==gi
+"vnoremap <A-j> :m'>+<CR>gv=gv
+"vnoremap <A-k> :m-2<CR>gv=gv
 
 "Rubocop
 "let g:syntastic_enable_signs=1
@@ -18,10 +52,6 @@
 "let g:vimrubocop_keymap = 0
 
 "nmap <Leader>w :RuboCop<CR>
-
-map <Leader>c :call RunCurrentSpecFile()<CR>
-map <Leader>x :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
 
 nnoremap gp `[v`]
 
@@ -42,14 +72,10 @@ vmap <Leader>z: :Tabularize /:\zs<CR>
 "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Clear all white space on save
-autocmd BufWritePre *.* :%s/\s\+$//e
-
-" Alternative
-let g:alternateExtensions_h = "m,c"
-let g:alternateExtensions_m = "h"
+autocmd BufWritePre * %s/\s\+$//e
 
 " Deprecrated
-let g:CommandTMaxHeight = 15
+"let g:CommandTMaxHeight = 15
 
 " Git Gutter
 let g:gitgutter_enabled = 1
@@ -63,22 +89,10 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_follow_symlinks = 2
 
 if !has("autocmd")
-    filetype off
+  filetype off
 end
 
-" Pathogen >> http://github.com/tpope/vim-pathogen
-call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
-
-" Setting lush syntax to default to lisp
-au BufRead,BufNewFile *.lsh setfiletype lisp
-"au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-au BufNewFile,BufRead *.hjs set syntax=handlebars
-au BufNewFile,BufRead *.styl set syntax=sass
 au BufNewFile,BufRead .bash_login set syntax=sh
-"au FileType javascript call JavaScriptFold()
-
 
 " Set indentation
 au FileType c setl shiftwidth=2 tabstop=2
@@ -88,27 +102,6 @@ autocmd Filetype .*.js setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype .*.php setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=2 sts=2 sw=2
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-
-" Vim-rails mvim init menu by default
-let g:rails_menu=1
-
-" Execute open rspec buffer
-" Thanks to Ian Smith-Heisters
-function! RunSpec(args)
- if exists("b:rails_root") && filereadable(b:rails_root . "/script/spec")
-   let spec = b:rails_root . "/script/spec"
- else
-   let spec = "spec"
- end
- let cmd = ":! " . spec . " % -cfn " . a:args
- execute cmd
-endfunction
-
-" Mappings
-" run one rspec example or describe block based on cursor position
-map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
-" run full rspec file
-map !S :call RunSpec("")
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -123,16 +116,14 @@ augroup vimrc_autocmds
 	autocmd BufRead * match OverLength /\%80v.*/
 augroup END
 
-let g:ragtag_global_maps = 1
-
 " Uncomment the following to have Vim load indentation rules according to the
 " detected filetype. Per default Debian Vim only load filetype specific
 " plugins.
 if has("autocmd")
-    syntax on
-	filetype on
-	filetype indent on
-	filetype plugin on
+  syntax on
+  filetype on
+  filetype indent on
+  filetype plugin on
 endif
 
 " The following are commented out as they cause vim to behave a lot
@@ -158,15 +149,8 @@ set hidden      " Hide buffers when they are abandoned
 set mouse=a		  " Enable mouse usage (all modes) in terminals
 set hlsearch
 
-"TagList Plugin
-let Tlist_Use_Right_Window = 0
-
-
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
-
-" Nerdtree
-nmap <F7> :NERDTreeToggle<CR>
 
 " JSLint Validation
 nmap <F6> :JSL<CR>
@@ -189,8 +173,6 @@ endfunction
 command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
 map <leader>a :Ack<space>
 
-
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 set background=dark
 "color ir_black
 color Tomorrow-Night-Eighties-modified
@@ -226,16 +208,7 @@ set undoreload=5000000 "maximum number lines to save for undo on a buffer reload
 
 if has("gui_running")
     " Enable heavy omni completion.
-    highlight clear SignColumn
-
-    if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
-    endif
-    let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-    "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-    let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-    let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+    "highlight clear SignColumn
 
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
     function! s:check_back_space()"{{{
@@ -243,19 +216,3 @@ if has("gui_running")
         return !col || getline('.')[col - 1] =~ '\s'
     endfunction"}}
 endif
-
-"if executable('coffeetags')
-"  let g:tagbar_type_coffee = {
-"        \ 'ctagsbin' : 'coffeetags',
-"        \ 'ctagsargs' : '',
-"        \ 'kinds' : [
-"        \ 'f:functions',
-"        \ 'o:object',
-"        \ ],
-"        \ 'sro' : ".",
-"        \ 'kind2scope' : {
-"        \ 'f' : 'object',
-"        \ 'o' : 'object',
-"        \ }
-"        \ }
-"endif
