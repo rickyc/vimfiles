@@ -9,7 +9,7 @@ Plug 'vim-scripts/ZoomWin'
 Plug 'godlygeek/tabular'
 Plug 'vim-scripts/L9'
 Plug 'othree/vim-autocomplpop'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Jackliu91/nerdtree-git-plugin'
 Plug 'vim-scripts/Mark'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
@@ -19,21 +19,25 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'pangloss/vim-javascript'
+if has("gui_running")
+  Plug 'w0rp/ale'
+end
 
 Plug 'vim-scripts/YankRing.vim'
 Plug 'tpope/vim-rails'
 Plug 'sjl/gundo.vim'
+Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 call plug#end()
 
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
-"let g:syntastic_mode_map = { 'passive_filetypes': ['scss'] }
-"let g:syntastic_javascript_checkers = ["eslint"]
-
 :nmap <Leader>s :source $MYVIMRC
-:nmap <Leader>v :e $MYVIMRC
+:nmap <Leader>e :e $MYVIMRC
+:nmap <Leader>v :NERDTreeToggle<CR>
 :nmap <Leader>o :ZoomWin<CR>
 :nmap <Leader>t :CtrlP<CR>
 :nmap <Leader>q :set transparency=0<CR>
@@ -46,14 +50,18 @@ nmap <F7> :NERDTreeToggle<CR>
 "vnoremap <A-j> :m'>+<CR>gv=gv
 "vnoremap <A-k> :m-2<CR>gv=gv
 
-"Rubocop
-"let g:syntastic_enable_signs=1
-"let g:syntastic_ruby_checkers=['rubocop', 'mri']
-"let g:vimrubocop_keymap = 0
+" Ale
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 
-"nmap <Leader>w :RuboCop<CR>
+"Vim-JSX Pretty
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:vim_jsx_pretty_enable_jsx_highlight = 0 " default 1
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 nnoremap gp `[v`]
+
+" Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Tabularize Hackery!
 nmap <Leader>z= :Tabularize /=<CR>
@@ -83,10 +91,12 @@ let g:gitgutter_enabled = 1
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|log$\|cookbooks$\|node_modules$\|project_files$\|test$',
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|log$\|cookbooks$\|node_modules$\|test$',
       \ 'file': '.exe$|.so$|.dat$'
       \ }
 let g:ctrlp_follow_symlinks = 2
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 
 if !has("autocmd")
   filetype off
@@ -179,10 +189,13 @@ color Tomorrow-Night-Eighties-modified
 "autocmd FileType * colorscheme Tomorrow-Night-Eighties
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
 
+set path+=**/src/main/**,**
+set suffixesadd+=.js
+
 if has("gui_running")
   "set guifont=Menlo:h11
-  set guifont=DejaVu_Sans_Mono:h11
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+  "set guifont=DejaVu_Sans_Mono:h11
+  "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
   let Powerline_symbols = 'fancy'
   set guioptions-=T
   set guioptions-=r
