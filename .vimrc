@@ -15,7 +15,8 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -39,7 +40,7 @@ nmap <F7> :NERDTreeToggle<CR>
 :nmap <Leader>e :e $MYVIMRC
 :nmap <Leader>v :NERDTreeToggle<CR>
 :nmap <Leader>o :ZoomWin<CR>
-:nmap <Leader>t :CtrlP<CR>
+:nmap <Leader>t :Files<CR>
 :nmap <Leader>q :set transparency=0<CR>
 :nmap <Leader>w :set transparency=10<CR>
 
@@ -87,16 +88,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Git Gutter
 let g:gitgutter_enabled = 1
-
-" CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.DS_Store
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|log$\|cookbooks$\|node_modules$\|test$',
-      \ 'file': '.exe$|.so$|.dat$'
-      \ }
-let g:ctrlp_follow_symlinks = 2
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
 
 if !has("autocmd")
   filetype off
