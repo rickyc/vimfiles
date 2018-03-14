@@ -15,11 +15,8 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'tpope/vim-rhubarb'
-"Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'terryma/vim-multiple-cursors'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -43,31 +40,19 @@ nmap <F7> :NERDTreeToggle<CR>
 :nmap <Leader>e :e $MYVIMRC
 :nmap <Leader>v :NERDTreeToggle<CR>
 :nmap <Leader>o :ZoomWin<CR>
-
-:nmap ; :Buffers<CR>
 :nmap <Leader>t :Files<CR>
-
 :nmap <Leader>q :set transparency=0<CR>
 :nmap <Leader>w :set transparency=10<CR>
 
+"nnoremap <A-j> :m+<CR>==
+"nnoremap <A-k> :m-2<CR>==
+"inoremap <A-j> <Esc>:m+<CR>==gi
+"inoremap <A-k> <Esc>:m-2<CR>==gi
+"vnoremap <A-j> :m'>+<CR>gv=gv
+"vnoremap <A-k> :m-2<CR>gv=gv
+
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-"let g:ale_linters = {
-"\  'javascript': ['flow', 'eslint'],
-"\  'ruby': ['rubocop']
-"\}
-
-"highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
-"highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = '⚠'
-let g:ale_statusline_format = ['X %d', '? %d', '']
-" %linter% is the name of the linter that provided the message
-" %s is the error or warning message
-let g:ale_echo_msg_format = '%linter% says %s'
-" Map keys to navigate between lines with errors and warnings.
-nnoremap <leader>an :ALENextWrap<cr>
-nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 "Vim-JSX Pretty
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -77,7 +62,7 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 nnoremap gp `[v`]
 
 " Ack
-let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Tabularize Hackery!
 nmap <Leader>z= :Tabularize /=<CR>
@@ -85,8 +70,21 @@ vmap <Leader>z= :Tabularize /=<CR>
 nmap <Leader>z: :Tabularize /:\zs<CR>
 vmap <Leader>z: :Tabularize /:\zs<CR>
 
+" Autocomplete
+"let g:neocomplcache_enable_at_startup = 1
+
+" Enable omni completion.
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 " Clear all white space on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" Deprecrated
+"let g:CommandTMaxHeight = 15
 
 " Git Gutter
 let g:gitgutter_enabled = 1
