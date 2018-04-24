@@ -15,6 +15,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
+Plug 'slim-template/vim-slim'
 "Plug 'tpope/vim-rhubarb'
 "Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -49,6 +50,10 @@ nmap <F7> :NERDTreeToggle<CR>
 
 :nmap <Leader>q :set transparency=0<CR>
 :nmap <Leader>w :set transparency=10<CR>
+
+" FZF
+" Respect .gitignore
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
