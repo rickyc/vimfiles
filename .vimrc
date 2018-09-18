@@ -51,6 +51,14 @@ nmap <F7> :NERDTreeToggle<CR>
 :nmap <Leader>q :set transparency=0<CR>
 :nmap <Leader>w :set transparency=10<CR>
 
+"
+"http://arjanvandergaag.nl/blog/navigating-project-files-with-vim.html
+"set path+=~/Sites/**
+
+let g:project_find_path = '.,' . system("git ls-tree -d HEAD --name-only | tr '\n' : | sed 's/:/**,/g'")
+autocmd VimEnter let &path = g:project_find_path
+autocmd BufReadPost * let &path = g:project_find_path
+
 " FZF
 " Respect .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -119,10 +127,10 @@ if has("autocmd")
 endif
 
 " Automatically highlights lines past 80 characters
-augroup vimrc_autocmds
-	autocmd BufRead * highlight OverLength ctermbg=darkgrey guibg=#592929
-	autocmd BufRead * match OverLength /\%80v.*/
-augroup END
+"augroup vimrc_autocmds
+"	autocmd BufRead * highlight OverLength ctermbg=darkgrey guibg=#592929
+"	autocmd BufRead * match OverLength /\%80v.*/
+"augroup END
 
 " Uncomment the following to have Vim load indentation rules according to the
 " detected filetype. Per default Debian Vim only load filetype specific
@@ -179,7 +187,9 @@ function! Ack_Search(command)
 endfunction
 
 command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
-map <leader>a :Ack<space>
+"map <leader>a :Ack<space>
+noremap <Leader>a :Ack<space>
+
 
 set background=dark
 "color ir_black
