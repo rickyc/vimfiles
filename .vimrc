@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'janko-m/vim-test' " https://github.com/janko-m/vim-test
 Plug 'scrooloose/nerdtree'
 Plug 'mtth/scratch.vim'
 Plug 'tpope/vim-repeat'
@@ -58,6 +59,15 @@ nmap <F7> :NERDTreeToggle<CR>
 let g:project_find_path = '.,' . system("git ls-tree -d HEAD --name-only | tr '\n' : | sed 's/:/**,/g'")
 autocmd VimEnter let &path = g:project_find_path
 autocmd BufReadPost * let &path = g:project_find_path
+
+" CTRL
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+let test#strategy = "iterm"
+
 
 " FZF
 " Respect .gitignore
@@ -236,4 +246,13 @@ if has("gui_running")
         let col = col('.') - 1
         return !col || getline('.')[col - 1] =~ '\s'
     endfunction"}}
+endif
+
+if has('gui_vimr')
+  nnoremap <S-D-{> :tabp<CR>
+  vnoremap <S-D-{> :tabp<CR>
+  inoremap <S-D-{> :tabp<CR>
+  nnoremap <S-D-}> :tabn<CR>
+  vnoremap <S-D-}> :tabn<CR>
+  inoremap <S-D-}> :tabn<CR>
 endif
