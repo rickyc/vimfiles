@@ -61,11 +61,11 @@ autocmd VimEnter let &path = g:project_find_path
 autocmd BufReadPost * let &path = g:project_find_path
 
 " CTRL
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+nmap <C-n> :TestNearest<CR>
+nmap <C-f> :TestFile<CR>
+nmap <C-s> :TestSuite<CR>
+nmap <C-l> :TestLast<CR>
+nmap <C-g> :TestVisit<CR>
 let test#strategy = "iterm"
 
 
