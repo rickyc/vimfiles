@@ -56,6 +56,20 @@ nmap <F7> :NERDTreeToggle<CR>
 "http://arjanvandergaag.nl/blog/navigating-project-files-with-vim.html
 "set path+=~/Sites/**
 
+""tab complete
+function! InsertTabWrapper(direction)
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    elseif "backward" == a:direction
+        return "\<c-p>"
+    else
+        return "\<c-n>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
+inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
+
 let g:project_find_path = '.,' . system("git ls-tree -d HEAD --name-only | tr '\n' : | sed 's/:/**,/g'")
 autocmd VimEnter let &path = g:project_find_path
 autocmd BufReadPost * let &path = g:project_find_path
@@ -76,7 +90,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " Ale
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 "let g:ale_linters = {
-"\  'javascript': ['flow', 'eslint'],
+"\  'javascript': ['eslint'],
 "\  'ruby': ['rubocop']
 "\}
 
@@ -88,6 +102,10 @@ let g:ale_statusline_format = ['X %d', '? %d', '']
 " %linter% is the name of the linter that provided the message
 " %s is the error or warning message
 let g:ale_echo_msg_format = '%linter% says %s'
+
+"let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
+"let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+
 " Map keys to navigate between lines with errors and warnings.
 nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
@@ -110,6 +128,7 @@ vmap <Leader>z: :Tabularize /:\zs<CR>
 
 " Clear all white space on save
 autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\.pa0/\.pa0/e
 
 " Git Gutter
 let g:gitgutter_enabled = 1
