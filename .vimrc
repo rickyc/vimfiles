@@ -15,6 +15,8 @@ Plug 'vim-scripts/Mark'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'zivyangll/git-blame.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'slim-template/vim-slim'
 "Plug 'tpope/vim-rhubarb'
@@ -41,6 +43,8 @@ call plug#end()
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
+:nmap <Leader>b :<C-u>call gitblame#echo()<CR>
+:autocmd CursorMoved * :call gitblame#echo()
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>e :e $MYVIMRC
 :nmap <Leader>v :NERDTreeToggle<CR>
