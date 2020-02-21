@@ -19,7 +19,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'zivyangll/git-blame.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'slim-template/vim-slim'
-"Plug 'tpope/vim-rhubarb'
 "Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -41,10 +40,12 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 call plug#end()
 
 " Nerdtree
-nmap <F7> :NERDTreeToggle<CR>
+"nmap <F7> :NERDTreeToggle<CR>
 
+" Git Blame Plugin like VSCode
 :nmap <Leader>b :<C-u>call gitblame#echo()<CR>
 :autocmd CursorMoved * :call gitblame#echo()
+
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>e :e $MYVIMRC
 :nmap <Leader>v :NERDTreeToggle<CR>
