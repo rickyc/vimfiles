@@ -42,16 +42,16 @@ Plug 'sjl/gundo.vim'
 Plug 'mxw/vim-jsx'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
-Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lock'}
-Plug 'fannheyward/coc-terminal', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lock'}
+"Plug 'fannheyward/coc-terminal', {'do': 'yarn install --frozen-lockfile'}
 
 
 call plug#end()
