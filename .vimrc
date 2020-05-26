@@ -5,23 +5,21 @@ Plug 'vim-test/vim-test'
 Plug 'Galooshi/vim-import-js'
 Plug 'scrooloose/nerdtree'
 Plug 'mtth/scratch.vim'
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
+" colorscheme OceanicNext
+
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
-Plug 'vim-scripts/ZoomWin'
-Plug 'godlygeek/tabular'
-Plug 'vim-scripts/L9'
-Plug 'othree/vim-autocomplpop'
+"Plug 'godlygeek/tabular'
+"Plug 'othree/vim-autocomplpop'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'vim-scripts/Mark'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'zivyangll/git-blame.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'slim-template/vim-slim'
 "Plug 'gregsexton/gitv', {'on': ['Gitv']}
@@ -31,36 +29,33 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 if has("gui_running")
-  Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
 end
 
-Plug 'vim-scripts/YankRing.vim'
+" Vim-scripts
+Plug 'Yggdroot/vim-mark'
+Plug 'mikeyrico/vim-scripts-yankring'
+Plug 'eparreno/vim-l9'
+Plug 'regedarek/ZoomWin'
+
 Plug 'tpope/vim-rails'
 Plug 'sjl/gundo.vim'
-Plug 'mxw/vim-jsx'
+"Plug 'mxw/vim-jsx'
+Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
-"Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lock'}
-"Plug 'fannheyward/coc-terminal', {'do': 'yarn install --frozen-lockfile'}
-
-
 call plug#end()
+
+" Remove the error bell
+set noeb vb t_vb=
 
 " Nerdtree
 " nmap <F7> :NERDTreeToggle<CR>
 
 " Git Blame Plugin like VSCode
-:nmap <Leader>b :<C-u>call gitblame#echo()<CR>
+":nmap <Leader>b :<C-u>call gitblame#echo()<CR>
 ":autocmd CursorMoved * :call gitblame#echo()
 
 :nmap <Leader>s :source $MYVIMRC
@@ -79,31 +74,30 @@ call plug#end()
 "set path+=~/Sites/**
 
 ""tab complete
-function! InsertTabWrapper(direction)
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    elseif "backward" == a:direction
-        return "\<c-p>"
-    else
-        return "\<c-n>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
-inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
+"function! InsertTabWrapper(direction)
+    "let col = col('.') - 1
+    "if !col || getline('.')[col - 1] !~ '\k'
+        "return "\<tab>"
+    "elseif "backward" == a:direction
+        "return "\<c-p>"
+    "else
+        "return "\<c-n>"
+    "endif
+"endfunction
+"inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
+"inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
 let g:project_find_path = '.,' . system("git ls-tree -d HEAD --name-only | tr '\n' : | sed 's/:/**,/g'")
 autocmd VimEnter let &path = g:project_find_path
 autocmd BufReadPost * let &path = g:project_find_path
 
 " CTRL
-nmap <C-n> :TestNearest<CR>
+nmap <C-i> :TestNearest<CR>
 nmap <C-f> :TestFile<CR>
 nmap <C-s> :TestSuite<CR>
 nmap <C-l> :TestLast<CR>
 nmap <C-g> :TestVisit<CR>
 let test#strategy = "iterm"
-
 
 " FZF
 " Respect .gitignore
@@ -129,24 +123,24 @@ let g:ale_echo_msg_format = '%linter% says %s'
 "let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
 
 " Map keys to navigate between lines with errors and warnings.
-nnoremap <leader>an :ALENextWrap<cr>
-nnoremap <leader>ap :ALEPreviousWrap<cr>
+"nnoremap <leader>an :ALENextWrap<cr>
+"nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 "Vim-JSX Pretty
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:vim_jsx_pretty_enable_jsx_highlight = 0 " default 1
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
-nnoremap gp `[v`]
+"nnoremap gp `[v`]
 
 " Ack
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
 
 " Tabularize Hackery!
-nmap <Leader>z= :Tabularize /=<CR>
-vmap <Leader>z= :Tabularize /=<CR>
-nmap <Leader>z: :Tabularize /:\zs<CR>
-vmap <Leader>z: :Tabularize /:\zs<CR>
+"nmap <Leader>z= :Tabularize /=<CR>
+"vmap <Leader>z= :Tabularize /=<CR>
+"nmap <Leader>z: :Tabularize /:\zs<CR>
+"vmap <Leader>z: :Tabularize /:\zs<CR>
 
 " Clear all white space on save
 autocmd BufWritePre * %s/\s\+$//e
@@ -155,9 +149,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " Git Gutter
 let g:gitgutter_enabled = 1
 
-if !has("autocmd")
-  filetype off
-end
+"if !has("autocmd")
+  "filetype off
+"end
 
 au BufNewFile,BufRead .bash_login set syntax=sh
 
@@ -172,10 +166,10 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
-endif
+"if has("autocmd")
+  "au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    "\| exe "normal g'\"" | endif
+"endif
 
 " Automatically highlights lines past 80 characters
 "augroup vimrc_autocmds
@@ -186,12 +180,12 @@ endif
 " Uncomment the following to have Vim load indentation rules according to the
 " detected filetype. Per default Debian Vim only load filetype specific
 " plugins.
-if has("autocmd")
-  syntax on
-  filetype on
-  filetype indent on
-  filetype plugin on
-endif
+"if has("autocmd")
+  "syntax on
+  "filetype on
+  "filetype indent on
+  "filetype plugin on
+"endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -217,10 +211,10 @@ set mouse=a		  " Enable mouse usage (all modes) in terminals
 set hlsearch
 
 " Gundo
-nnoremap <F5> :GundoToggle<CR>
+"nnoremap <F5> :GundoToggle<CR>
 
 " JSLint Validation
-nmap <F6> :JSL<CR>
+"nmap <F6> :JSL<CR>
 
 "nmap <S-F7> :NERDTreeClose<CR> "shift-f7
 " Store the bookmarks file in perforce
@@ -245,7 +239,6 @@ endfunction
 command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
 "map <leader>a :Ack<space>
 noremap <Leader>a :Ack<space>
-
 
 set background=dark
 "color ir_black
@@ -289,16 +282,16 @@ set undofile
 set undolevels=10000 "maximum number of changes that can be undone
 set undoreload=5000000 "maximum number lines to save for undo on a buffer reload
 
-if has("gui_running")
-    " Enable heavy omni completion.
-    "highlight clear SignColumn
+"if has("gui_running")
+    "" Enable heavy omni completion.
+    ""highlight clear SignColumn
 
-    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-    function! s:check_back_space()"{{{
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1] =~ '\s'
-    endfunction"}}
-endif
+    "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+    "function! s:check_back_space()"{{{
+        "let col = col('.') - 1
+        "return !col || getline('.')[col - 1] =~ '\s'
+    "endfunction"}}
+"endif
 
 if has('gui_vimr')
   nnoremap <S-D-{> :tabp<CR>
@@ -310,7 +303,6 @@ if has('gui_vimr')
   color slate
 endif
 
-
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -319,7 +311,7 @@ set hidden
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=500
+set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
