@@ -11,7 +11,7 @@ Plug 'mtth/scratch.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
-"Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 "Plug 'othree/vim-autocomplpop'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
@@ -137,10 +137,10 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
 
 " Tabularize Hackery!
-"nmap <Leader>z= :Tabularize /=<CR>
-"vmap <Leader>z= :Tabularize /=<CR>
-"nmap <Leader>z: :Tabularize /:\zs<CR>
-"vmap <Leader>z: :Tabularize /:\zs<CR>
+nmap <Leader>z= :Tabularize /=<CR>
+vmap <Leader>z= :Tabularize /=<CR>
+nmap <Leader>z: :Tabularize /:\zs<CR>
+vmap <Leader>z: :Tabularize /:\zs<CR>
 
 " Clear all white space on save
 autocmd BufWritePre * %s/\s\+$//e
@@ -237,7 +237,7 @@ function! Ack_Search(command)
 endfunction
 
 command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
-"map <leader>a :Ack<space>
+map <leader>a :Ack<space>
 noremap <Leader>a :Ack<space>
 
 set background=dark
@@ -392,8 +392,8 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
