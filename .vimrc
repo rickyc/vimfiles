@@ -135,6 +135,7 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 " Ack
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
+let g:ack_use_cword_for_empty_search = 1
 
 " Tabularize Hackery!
 nmap <Leader>z= :Tabularize /=<CR>
