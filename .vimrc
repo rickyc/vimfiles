@@ -5,9 +5,7 @@ Plug 'vim-test/vim-test'
 Plug 'Galooshi/vim-import-js'
 Plug 'scrooloose/nerdtree'
 Plug 'mtth/scratch.vim'
-" Plug 'mhartington/oceanic-next'
-" colorscheme OceanicNext
-
+Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
@@ -243,7 +241,8 @@ noremap <Leader>a :Ack<space>
 
 set background=dark
 "color ir_black
-color Tomorrow-Night-Eighties-modified
+"color Tomorrow-Night-Eighties-modified
+colorscheme OceanicNext
 "autocmd FileType * colorscheme Tomorrow-Night-Eighties
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
 
