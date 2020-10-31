@@ -14,7 +14,7 @@ Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
 "Plug 'othree/vim-autocomplpop'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
@@ -209,11 +209,17 @@ set suffixesadd+=.js
 set encoding=utf8
 
 if has("gui_running")
+  let g:airline_powerline_fonts = 1
+
+  "set guifont=Menlo:h11
+  "set guifont=DejaVu_Sans_Mono:h11
+  "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+  "set guifont=Menlo\ for\ Powerline
   "set guifont=Menlo:h11
   "set guifont=DejaVu_Sans_Mono:h11
   "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
   "let g:airline_powerline_fonts = 1
-  "let Powerline_symbols = 'fancy'
+  let Powerline_symbols = 'fancy'
   set guioptions-=T
   set guioptions-=r
   set guioptions-=L
@@ -320,8 +326,10 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
@@ -345,8 +353,8 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-"xmap <leader>a  <Plug>(coc-codeaction-selected)
-"nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -363,6 +371,13 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+" Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
