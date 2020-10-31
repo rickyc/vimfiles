@@ -4,6 +4,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-test/vim-test'
 let test#strategy = "iterm"
 
+Plug 'preservim/tagbar'
+
 Plug 'Galooshi/vim-import-js'
 Plug 'scrooloose/nerdtree'
 Plug 'mtth/scratch.vim'
@@ -58,7 +60,7 @@ nmap <F7> :NERDTreeToggle<CR>
 
 :nmap ; :Buffers<CR>
 :nmap <Leader>t :Files<CR>
-
+:nmap <Leader>w :Tags<CR>
 
 " FZF
 " Respect .gitignore
@@ -91,6 +93,20 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 " Ack
 let g:ackprg = 'ag --vimgrep --nogroup --nocolor --column'
 let g:ack_use_cword_for_empty_search = 1
+
+
+function! Ack_Search(command)
+    cexpr system("ack " . a:command)
+endfunction
+
+command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
+"map <leader>a :Ack<space>
+noremap <leader>a  :Ack -Q <C-r>=expand('<cword>')<CR>
+"nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+"
+noremap <leader>a  :Ack -Q <C-r>=expand('<cword>')<CR>
+noremap <leader>c  :call fzf#vim#tags(expand('<cword>'))<CR>
+
 
 " Tabularize Hackery!
 nmap <Leader>z= :Tabularize /=<CR>
@@ -190,15 +206,6 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-
-"set grepprg=ack
-function! Ack_Search(command)
-    cexpr system("ack " . a:command)
-endfunction
-
-command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
-map <leader>a :Ack<space>
-noremap <Leader>a :Ack<space>
 
 "autocmd FileType * colorscheme Tomorrow-Night-Eighties
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
@@ -354,8 +361,8 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
