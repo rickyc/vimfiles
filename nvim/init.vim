@@ -204,6 +204,7 @@ noremap <Leader>a :Ack<space>
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
 
 set path+=**/src/main/**,**
+set wildignore+=**/node_modules/**
 set suffixesadd+=.js
 
 set encoding=utf8
