@@ -100,11 +100,9 @@ function! Ack_Search(command)
 endfunction
 
 command! -nargs=+ -complete=file Ack call Ack_Search(<q-args>)
-"map <leader>a :Ack<space>
-noremap <leader>a  :Ack -Q <C-r>=expand('<cword>')<CR>
+map <leader>a :Ack<space>
+noremap <leader>q  :Ack -Q <C-r>=expand('<cword>')<CR>
 "nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
-"
-noremap <leader>a  :Ack -Q <C-r>=expand('<cword>')<CR>
 noremap <leader>c  :call fzf#vim#tags(expand('<cword>'))<CR>
 
 
