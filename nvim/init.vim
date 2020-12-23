@@ -16,6 +16,7 @@ Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
 "Plug 'othree/vim-autocomplpop'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'lambdalisue/fern.vim'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jlanzarotta/bufexplorer'
@@ -43,6 +44,7 @@ Plug 'eparreno/vim-l9'
 Plug 'regedarek/ZoomWin'
 
 Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 Plug 'sjl/gundo.vim'
 "Plug 'mxw/vim-jsx'
 Plug 'yuezk/vim-js'
@@ -50,9 +52,13 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 
 call plug#end()
 
+" Copy Path
+:nnoremap <Leader>p :let @+=expand('%:p')<CR>
+
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
+:nmap <Leader>z :set foldmethod=indent
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>e :e $MYVIMRC
 :nmap <Leader>v :NERDTreeToggle<CR>
