@@ -1,5 +1,13 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'folke/trouble.nvim'
+Plug 'folke/todo-comments.nvim'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-test/vim-test'
 let test#strategy = "iterm"
@@ -9,6 +17,7 @@ Plug 'preservim/tagbar'
 Plug 'Galooshi/vim-import-js'
 Plug 'scrooloose/nerdtree'
 Plug 'mtth/scratch.vim'
+"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -45,7 +54,7 @@ Plug 'regedarek/ZoomWin'
 
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-Plug 'sjl/gundo.vim'
+"Plug 'sjl/gundo.vim'
 "Plug 'mxw/vim-jsx'
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -78,6 +87,9 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 "\  'javascript': ['flow', 'eslint'],
 "\  'ruby': ['rubocop']
 "\}
+"
+let g:ale_ruby_rubocop_executable = 'bundle'
+
 
 "highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
 "highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
@@ -214,9 +226,9 @@ let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 "autocmd FileType * colorscheme Tomorrow-Night-Eighties
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
 
-set path+=**/src/main/**,**
-set wildignore+=**/node_modules/**
-set suffixesadd+=.js
+set path+=.,**
+set wildignore+=**/node_modules/**,**/public/**,**/tmp/**,**/.git/**
+set suffixesadd+=.js,.jsx
 
 set encoding=utf8
 
@@ -427,3 +439,8 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+lua << EOF
+  require("trouble").setup { }
+  require("todo-comments").setup { }
+EOF
