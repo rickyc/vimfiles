@@ -444,4 +444,6 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 lua << EOF
   require("trouble").setup { }
   require("todo-comments").setup { }
+  require'lspconfig'.tsserver.setup{}
+  require'lspconfig'.solargraph.setup{}
 EOF
