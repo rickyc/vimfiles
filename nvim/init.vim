@@ -4,9 +4,13 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'folke/trouble.nvim'
 Plug 'folke/todo-comments.nvim'
 
+Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'MunifTanjim/nui.nvim'
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'jreybert/vimagit'
@@ -18,21 +22,23 @@ let test#strategy = "iterm"
 Plug 'preservim/tagbar'
 
 Plug 'Galooshi/vim-import-js'
-Plug 'scrooloose/nerdtree'
+
+"Plug 'scrooloose/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 Plug 'mtth/scratch.vim'
-"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
 "Plug 'othree/vim-autocomplpop'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'ryanoasis/vim-devicons'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'scrooloose/nerdcommenter'
@@ -53,7 +59,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/vim-mark'
 Plug 'mikeyrico/vim-scripts-yankring'
 Plug 'eparreno/vim-l9'
-Plug 'regedarek/ZoomWin'
 
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
@@ -61,20 +66,19 @@ Plug 'vim-ruby/vim-ruby'
 "Plug 'mxw/vim-jsx'
 Plug 'yuezk/vim-js'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'github/copilot.vim'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 call plug#end()
 
 " Copy Path
 :nnoremap <Leader>p :let @+=expand('%:p')<CR>
 
-" Nerdtree
-nmap <F7> :NERDTreeToggle<CR>
-
 :nmap <Leader>z :set foldmethod=indent
 :nmap <Leader>s :source $MYVIMRC
 :nmap <Leader>e :e $MYVIMRC
-:nmap <Leader>v :NERDTreeToggle<CR>
-:nmap <Leader>o :ZoomWin<CR>
+:nmap <Leader>v :Neotree<CR>
+:nmap <Leader>g :TestFile<CR>
 
 :nmap ; :Buffers<CR>
 :nmap <Leader>t :Files<CR>
@@ -136,7 +140,7 @@ vmap <Leader>z: :Tabularize /:\zs<CR>
 autocmd BufWritePre * %s/\s\+$//e
 
 " Git Gutter
-let g:gitgutter_enabled = 1
+"let g:gitgutter_enabled = 1
 
 "if !has("autocmd")
   "filetype off
@@ -214,16 +218,16 @@ set hlsearch
 " Store the bookmarks file in perforce
 "let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
 "let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
-            \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$', '\.DS_STORE$',
-            \ '\.embed\.manifest$', '\.embed\.manifest.res$',
-            \ '\.intermediate\.manifest$', '^mt.dep$' ]
-
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+"let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
+"            \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$', '\.DS_STORE$',
+"            \ '\.embed\.manifest$', '\.embed\.manifest.res$',
+"            \ '\.intermediate\.manifest$', '^mt.dep$' ]
+"
+"let g:NERDTreeFileExtensionHighlightFullName = 1
+"let g:NERDTreeExactMatchHighlightFullName = 1
+"let g:NERDTreePatternMatchHighlightFullName = 1
+"let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+"let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 
 "autocmd FileType * colorscheme Tomorrow-Night-Eighties
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
@@ -236,7 +240,6 @@ set encoding=utf8
 
 if has("gui_running")
   let g:airline_powerline_fonts = 1
-
   "set guifont=Menlo:h11
   "set guifont=DejaVu_Sans_Mono:h11
   "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -309,8 +312,6 @@ if has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
-
-
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -458,4 +459,11 @@ lua << EOF
   require("todo-comments").setup { }
   require'lspconfig'.tsserver.setup{}
   require'lspconfig'.solargraph.setup{}
+  require("toggleterm").setup()
+  require('gitsigns').setup {
+    current_line_blame = true,
+    current_line_blame_opts = {
+      delay = 300
+    },
+  }
 EOF
