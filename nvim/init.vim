@@ -4,6 +4,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'folke/trouble.nvim'
 Plug 'folke/todo-comments.nvim'
 
+" Neotree Dependencies
 Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
@@ -23,30 +24,27 @@ Plug 'preservim/tagbar'
 
 Plug 'Galooshi/vim-import-js'
 
-"Plug 'scrooloose/nerdtree'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 Plug 'mtth/scratch.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
-"Plug 'othree/vim-autocomplpop'
 Plug 'lambdalisue/fern.vim', { 'branch': 'main' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'jlanzarotta/bufexplorer'
-"Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'scrooloose/nerdcommenter'
 Plug 'slim-template/vim-slim'
-"Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 "Plug 'terryma/vim-multiple-cursors'
+"Plug 'gregsexton/gitv', {'on': ['Gitv']}
+"Plug 'airblade/vim-gitgutter'
+"Plug 'othree/vim-autocomplpop'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -210,24 +208,6 @@ set hlsearch
 
 " Gundo
 "nnoremap <F5> :GundoToggle<CR>
-
-" JSLint Validation
-"nmap <F6> :JSL<CR>
-
-"nmap <S-F7> :NERDTreeClose<CR> "shift-f7
-" Store the bookmarks file in perforce
-"let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
-"let NERDTreeShowBookmarks=1
-"let NERDTreeIgnore=[ '\.swp$', '\.suo$', '\.vcproj\.RIMNET', '\.obj$',
-"            \ '\.ilk$', '^BuildLog.htm$', '\.pdb$', '\.idb$', '\.DS_STORE$',
-"            \ '\.embed\.manifest$', '\.embed\.manifest.res$',
-"            \ '\.intermediate\.manifest$', '^mt.dep$' ]
-"
-"let g:NERDTreeFileExtensionHighlightFullName = 1
-"let g:NERDTreeExactMatchHighlightFullName = 1
-"let g:NERDTreePatternMatchHighlightFullName = 1
-"let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-"let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 
 "autocmd FileType * colorscheme Tomorrow-Night-Eighties
 "autocmd FileType *.jsx colorscheme Tomorrow-Night-Eighties-modified
