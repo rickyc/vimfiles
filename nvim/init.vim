@@ -71,6 +71,7 @@ call plug#end()
 
 " Copy Path
 :nnoremap <Leader>p :let @+=expand('%:p')<CR>
+:nnoremap <Leader>ru :execute 'TermExec cmd="rubocop --auto-correct ' . expand('%:p') . '"'<CR>
 
 :nmap <Leader>z :set foldmethod=indent
 :nmap <Leader>s :source $MYVIMRC
